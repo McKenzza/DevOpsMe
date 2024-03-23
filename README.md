@@ -12,3 +12,4 @@ TODO:
 - [ ] Jenkins
 - [ ] Helm
 - [ ] Terraform
+- [ ] Linux
