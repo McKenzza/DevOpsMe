@@ -27,9 +27,23 @@ Next usage with the key `[-a]` prints all the files with hidden files and direct
 $ ls -a
 . .. .bash_history .bash_history Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
 ```
-Next case - prints as a list `[-al]` or we can use alias `ll`
+Next case - prints as a list `[-l]` or we can use alias `ll`
 ```bash
-$ ls -al # ll
+$ ls -l # ll
+total 32
+drwxr-xr-x  2 user    user   4096 Mar 15 15:33 Desktop
+drwxr-xr-x  2 user    user   4096 Mar 13 19:30 Documents
+drwxr-xr-x  2 user    user   4096 Mar 13 19:30 Downloads
+drwxr-xr-x  2 user    user   4096 Mar 13 19:30 Music
+drwxr-xr-x  2 user    user   4096 Mar 13 19:30 Pictures
+drwxr-xr-x  2 user    user   4096 Mar 13 19:30 Public
+drwxr-xr-x  2 user    user   4096 Mar 13 19:30 Templates
+drwxr-xr-x  2 user    user   4096 Mar 13 19:30 Videos
+```
+
+we can combine the keys `ls -al`
+```bash
+$ ls -al
 total 32
 drwx------ 39 user    user   4096 Mar 24 13:52 .
 drwxr-xr-x  4 root    root   4096 Mar 13 19:25 ..
