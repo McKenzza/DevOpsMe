@@ -4,12 +4,17 @@ Basic knowledge of devops
 
 
 TODO:
-- [ ] Ansible
+- [ ] Linux
 - [ ] Docker
-- [ ] Gitlab
 - [ ] Kubernetes
 - [ ] Git
+- [ ] Gitlab
 - [ ] Jenkins
 - [ ] Helm
+
+#### IaC
+- [ ] Ansible
 - [ ] Terraform
-- [ ] Linux
+- [ ] SaltStack
+- [ ] Puppet
+- [ ] Chef
