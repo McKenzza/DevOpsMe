@@ -1,18 +1,21 @@
 # Linux Base Commands
 
 ## Contents
-[**Basic Commands**](#where-am-i)
+- [**Basic Commands**](#basic-commands)
+- [**Info Commands**](#info-commands)
 
-## Where am I?
 
-How to understand where we are? For this we have `pwd` command, which <b>p</b>rints current <b>w</b>ork <b>d</b>irectory:
+## Basic Commands
+### Where am I?
+
+How to understand where we are? For this we have `pwd` command, which <b>p</b>rints current <b>w</b>orking <b>d</b>irectory:
 ```bash
 $ pwd
 /home/user
 ```
 We are in user's home directory! Cool.
 
-## Which files are located in some directory?
+### Which files are located in some directory?
 
 To answer this question, we have `ls` command, which <b>l</b>i<b>s</b>ts directory contents of files and directories:
 
@@ -74,3 +77,41 @@ $ ll Downloads/
 total 0
 ```
 but we have no files here.
+
+## Info commands
+
+### Who am I? Really.
+
+Just enter `whoami` command
+
+```bash
+$ whoami
+user
+```
+
+### How long server is up?
+
+Command [uptime](## "Gives a one line display of the following information: the current time, how long the system has been running, how many users are currently logged on, and the system load averages for the past 1, 5, and 15 minutes") tells us how long the system running:
+
+```bash
+$ uptime
+ 16:49:56 up  8:34,  1 user,  load average: 1.02, 0.94, 0.89
+```
+
+or in pretty format
+
+```bash
+$ uptime -p
+up 8 hours, 34 minutes
+```
+
+### Who is logged on?
+
+Command `w` displays information about currently logged in users and what each user is doing. The header shows the same information like [uptime](#how-long-server-is-up) command
+
+```bash
+$ w
+ 17:20:49 up  9:05,  1 user,  load average: 0.55, 0.58, 0.67
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+user     tty1     -                08:16    9:05m  0.16s  0.16s /usr/bin/process
+```
