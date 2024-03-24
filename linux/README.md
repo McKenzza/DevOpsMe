@@ -2,7 +2,7 @@
 
 ## Contents
 - [**Basic Commands**](#basic-commands)
-- [**Info Commands**](#info-commands)
+- [**User Info Commands**](#user-info-commands)
 
 
 ## Basic Commands
@@ -78,17 +78,6 @@ total 0
 ```
 but we have no files here.
 
-## Info commands
-
-### Who am I? Really.
-
-Just enter `whoami` command
-
-```bash
-$ whoami
-user
-```
-
 ### How long server is up?
 
 Command [uptime](## "Gives a one line display of the following information: the current time, how long the system has been running, how many users are currently logged on, and the system load averages for the past 1, 5, and 15 minutes") tells us how long the system running:
@@ -105,7 +94,47 @@ $ uptime -p
 up 8 hours, 34 minutes
 ```
 
-### Who is logged on?
+## User Info Commands
+
+### Who am I? Really.
+
+Just enter `whoami` command
+
+```bash
+$ whoami
+user
+```
+
+Command `groups` prints the groups a user is in
+
+```bash
+$ groups
+user adm dialout cdrom floppy sudo audio dip video plugdev users netdev wireshark bluetooth lpadmin kaboxer docker
+```
+
+Command `id` prints real and effective user and group IDs
+
+```bash
+$ id
+uid=1000(user) gid=1000(user) groups=1000(user),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),100(users),101(netdev),113(wireshark),116(bluetooth),121(lpadmin),132(kaboxer),986(docker)
+```
+
+### Who is logged in?
+
+Command `who` shows information about currently logged in user.
+
+```bash
+$ who
+user  tty1         2024-03-24 08:16
+user  pts/0        2024-03-24 08:16 (:1)
+user  pts/1        2024-03-24 08:19 (:1)
+```
+
+|Subject|Description|
+|---|----------------|
+|user | login name|
+|tty1 | terminal|
+|2024-03-24 08:19 | login date and time|
 
 Command `w` displays information about currently logged in users and what each user is doing. The header shows the same information like [uptime](#how-long-server-is-up) command
 
@@ -114,4 +143,41 @@ $ w
  17:20:49 up  9:05,  1 user,  load average: 0.55, 0.58, 0.67
 USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
 user     tty1     -                08:16    9:05m  0.16s  0.16s /usr/bin/process
+```
+
+Command `users` prints usernames of all users currently logged on the system.
+
+```bash
+$ users
+user user user
+```
+
+Command `last` prints a listing of last logged in users
+
+```bash
+$ last
+user     pts/4        :1               Sun Mar 24 17:20 - 17:26  (00:05)
+user     pts/3        :1               Sun Mar 24 17:20 - 17:20  (00:00)
+user     pts/3        :1               Sun Mar 24 10:05 - 11:05  (01:00)
+user     pts/1        :1               Sun Mar 24 08:19   still logged in
+user     pts/0        :1               Sun Mar 24 08:16   still logged in
+user     tty1                          Sun Mar 24 08:16   still logged in
+reboot   system boot  6.6.9-amd64      Sun Mar 24 08:15   still running
+...
+```
+
+Command `lastlog` prints the most recent login of all users or of a given user
+
+```bash
+$ lastlog
+Username         Port     From                                       Latest
+root                                                                **Never logged in**
+daemon                                                              **Never logged in**
+bin                                                                 **Never logged in**
+sys                                                                 **Never logged in**
+...
+sddm                                                                **Never logged in**
+polkitd                                                             **Never logged in**
+rtkit                                                               **Never logged in**
+user             tty2                                               Mon Mar 11 19:56:37 +0300 2024
 ```
