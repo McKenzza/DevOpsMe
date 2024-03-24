@@ -4,13 +4,21 @@ Basic knowledge of devops
 
 
 TODO:
-- [ ] Linux
+
+- [ ] Linux base commands
+#### Container solutions
 - [ ] Docker
+- [ ] LXC/LXD
+
+#### CI/CD
 - [ ] Kubernetes
-- [ ] Git
-- [ ] Gitlab
+- [ ] Gitlab-ci
 - [ ] Jenkins
 - [ ] Helm
+
+#### Version control
+- [ ] Mercurial
+- [ ] Git
 
 #### IaC
 - [ ] Ansible
