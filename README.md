@@ -1,24 +1,28 @@
 # DevOps
 
-Basic knowledge of devops
+Basic knowledge of devops and system administration
 
 
 TODO:
 
 - [ ] Linux base commands
-#### Container solutions
+#### Container platforms
+- [ ] CoreOS
+- [ ] CRI-O
 - [ ] Docker
+- [ ] Kubernetes
 - [ ] LXC/LXD
+- [ ] OpenShift
+- [ ] OpenVZ 
 
 #### CI/CD
-- [ ] Kubernetes
+- [ ] ArgoCD
 - [ ] Gitlab-ci
 - [ ] Jenkins
-- [ ] Helm
 
 #### Version control
-- [ ] Mercurial
 - [ ] Git
+- [ ] Mercurial
 
 #### IaC
 - [ ] Ansible
@@ -26,3 +30,15 @@ TODO:
 - [ ] SaltStack
 - [ ] Puppet
 - [ ] Chef
+
+#### Package managers
+- [ ] apt
+- [ ] dnf (yum)
+- [ ] dpkg
+- [ ] gem
+- [ ] Helm
+- [ ] npm
+- [ ] Pacman
+- [ ] pip
+- [ ] snap
+- [ ] zypper
