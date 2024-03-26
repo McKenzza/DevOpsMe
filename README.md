@@ -1,3 +1,5 @@
+![example workflow](https://github.com/mckenzza/devops/actions/workflows/latex.yml/badge.svg)
+
 # DevOps
 
 Basic knowledge of devops and system administration
