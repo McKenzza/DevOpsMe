@@ -12,8 +12,11 @@
 - [**File Management**](#file-management)
   - [Which files are located in some directory](#which-files-are-located-in-some-directory)
   - [How to create a file](#how-create-a-file)
+  - [How to remove a file](#how-to-remove-a-file)
   - [How to read a file](#how-to-read-a-file)
   - [Determine file type](#determine-file-type)
+  - [Copy file](#copy-file)
+  - [How to rename file](#how-to-rename-a-file)
 
 ## Basic
 
@@ -239,7 +242,7 @@ file1.txt file2.txt
 
 Finally we can create file with editors like vi, nano, emacs, gedit etc.
 
-### How to remove file
+### How to remove a file
 
 Just use `rm` (remove) command:
 
@@ -264,4 +267,26 @@ The `file` command is used to know the file type.
 ```bash
 $ file file2.txt
 file2.txt: ASCII text
+```
+
+### Copy file
+
+The `cp` (copy) command copy file from source to destiantion:
+
+```bash
+$ cp file2.txt file1.txt
+$ ls
+file1.txt file2.txt
+# file2.txt copied to file1.txt
+```
+
+### How to rename a file
+
+We can rename a file with `mv` (move) command:
+
+```bash
+$ mv file2.txt file3.txt
+$ ls
+file1.txt file3.txt
+# file2.txt moved (renamed) to file3.txt
 ```
