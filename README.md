@@ -4,7 +4,6 @@
 
 Basic knowledge of devops and system administration
 
-
 ## TODO
 
 - [ ] Linux base commands
@@ -17,7 +16,7 @@ Basic knowledge of devops and system administration
 - [ ] Kubernetes
 - [ ] LXC/LXD
 - [ ] OpenShift
-- [ ] OpenVZ 
+- [ ] OpenVZ
 
 ### CI/CD
 
