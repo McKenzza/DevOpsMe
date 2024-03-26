@@ -11,6 +11,7 @@
   - [Who is logged in?](#who-is-logged-in)
 - [**File Management**](#file-management)
   - [Which files are located in some directory?](#which-files-are-located-in-some-directory)
+  - [How create a file?](#how-create-a-file)
 
 ## Basic
 
@@ -197,6 +198,7 @@ drwxr-xr-x  2 user    user   4096 Mar 13 19:30 Videos
 ```
 
 where
+
 |Name|Description|
 |---|---------------|
 |.| current directory|
@@ -212,3 +214,25 @@ total 0
 ```
 
 but we have no files here.
+
+### How create a file?
+
+We can use `touch` command to create new empty file(s). Touch is also used to change timestamps on existing files and directories.
+
+```bash
+$ touch file
+$ ls
+file
+```
+
+Also we can create empty file with `>` - redirect standart output to file
+> [!WARNING]
+> always overwrites/destroys the previous content
+
+```bash
+$ > file
+$ ls
+file
+```
+
+And we can create file with editors like vi, nano, emacs, gedit etc.
