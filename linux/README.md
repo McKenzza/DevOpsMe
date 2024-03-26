@@ -231,6 +231,7 @@ file1.txt
 ```
 
 Also we can create empty file with `>` - redirect standart output to file
+
 > [!WARNING]
 > always overwrites/destroys the previous content
 
