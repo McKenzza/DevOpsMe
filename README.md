@@ -1,37 +1,44 @@
+![example workflow](https://github.com/mckenzza/devops/actions/workflows/latex.yml/badge.svg)
+
 # DevOps
 
 Basic knowledge of devops and system administration
 
-
-TODO:
+## TODO
 
 - [ ] Linux base commands
-#### Container platforms
+
+### Container platforms
+
 - [ ] CoreOS
 - [ ] CRI-O
 - [ ] Docker
 - [ ] Kubernetes
 - [ ] LXC/LXD
 - [ ] OpenShift
-- [ ] OpenVZ 
+- [ ] OpenVZ
 
-#### CI/CD
+### CI/CD
+
 - [ ] ArgoCD
 - [ ] Gitlab-ci
 - [ ] Jenkins
 
-#### Version control
+### Version control
+
 - [ ] Git
 - [ ] Mercurial
 
-#### IaC
+### IaC
+
 - [ ] Ansible
 - [ ] Terraform
 - [ ] SaltStack
 - [ ] Puppet
 - [ ] Chef
 
-#### Package managers
+### Package managers
+
 - [ ] apt
 - [ ] dnf (yum)
 - [ ] dpkg
