@@ -3,19 +3,21 @@
 ## Contents
 
 - [**Basic**](#basic)
-  - [Where am I?](#where-am-i)
-  - [How long server is up?](#how-long-server-is-up)
+  - [Where am I](#where-am-i)
+  - [How long server is up](#how-long-server-is-up)
   - [Manuals](#manuals)
 - [**User Info**](#user-info)
-  - [Who am I? Really.](#who-am-i-really)
-  - [Who is logged in?](#who-is-logged-in)
+  - [Who am I](#who-am-i)
+  - [Who is logged in](#who-is-logged-in)
 - [**File Management**](#file-management)
-  - [Which files are located in some directory?](#which-files-are-located-in-some-directory)
-  - [How create a file?](#how-create-a-file)
+  - [Which files are located in some directory](#which-files-are-located-in-some-directory)
+  - [How to create a file](#how-create-a-file)
+  - [How to read a file](#how-to-read-a-file)
+  - [Determine file type](#determine-file-type)
 
 ## Basic
 
-### Where am I?
+### Where am I
 
 How to understand where we are? For this we have `pwd` command, which **p**rints current **w**orking **d**irectory:
 
@@ -26,7 +28,7 @@ $ pwd
 
 We are in user's home directory! Cool.
 
-### How long server is up?
+### How long server is up
 
 Command `uptime` (Gives a one line display of the following information: the current time, how long the system has been running, how many users are currently logged on, and the system load averages for the past 1, 5, and 15 minutes) tells us how long the system running:
 
@@ -58,7 +60,7 @@ info uptime
 
 ## User Info
 
-### Who am I? Really
+### Who am I
 
 Just enter `whoami` command
 
@@ -81,7 +83,7 @@ $ id
 uid=1000(user) gid=1000(user) groups=1000(user),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),100(users),101(netdev),113(wireshark),116(bluetooth),121(lpadmin),132(kaboxer),986(docker)
 ```
 
-### Who is logged in?
+### Who is logged in
 
 Command `who` shows information about currently logged in user.
 
@@ -146,7 +148,7 @@ user             tty2                                               Mon Mar 11 1
 
 ## File Management
 
-### Which files are located in some directory?
+### Which files are located in some directory
 
 To answer this question, we have `ls` command, which **l**i**s**ts directory contents of files and directories:
 
@@ -215,14 +217,14 @@ total 0
 
 but we have no files here.
 
-### How create a file?
+### How create a file
 
 We can use `touch` command to create new empty file(s). Touch is also used to change timestamps on existing files and directories.
 
 ```bash
-$ touch file
+$ touch file1.txt
 $ ls
-file
+file1.txt
 ```
 
 Also we can create empty file with `>` - redirect standart output to file
@@ -230,9 +232,36 @@ Also we can create empty file with `>` - redirect standart output to file
 > always overwrites/destroys the previous content
 
 ```bash
-$ > file
+$ > file2.txt
 $ ls
-file
+file1.txt file2.txt
 ```
 
-And we can create file with editors like vi, nano, emacs, gedit etc.
+Finally we can create file with editors like vi, nano, emacs, gedit etc.
+
+### How to remove file
+
+Just use `rm` (remove) command:
+
+```bash
+$ rm file1.txt
+# file file1.txt has been removed
+```
+
+### How to read a file
+
+The `cat` command is used to concatenate files and print on the standard output:
+
+```bash
+$ cat file2.txt
+# some content
+```
+
+### Determine file type
+
+The `file` command is used to know the file type.
+
+```bash
+$ file file2.txt
+file2.txt: ASCII text
+```
