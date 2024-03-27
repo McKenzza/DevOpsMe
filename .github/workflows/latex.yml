@@ -12,7 +12,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Compile LaTeX document
         run: |
-          pandoc $(`base64 -d <<< bHMgLWQgbGludXgvIShSRUFETUUubWQpCg==`) -o linux.pdf
+          list=`ls linux/!(README.md)`
+          pandoc $list -o linux.pdf
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
