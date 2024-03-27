@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Compile LaTeX document
         run: |
-          pandoc `echo bHMgLWQgbGludXgvIShSRUFETUUubWQpCg== | base64 -d` -o linux.pdf
+          pandoc $(`base64 -d <<< bHMgLWQgbGludXgvIShSRUFETUUubWQpCg==`) -o linux.pdf
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
