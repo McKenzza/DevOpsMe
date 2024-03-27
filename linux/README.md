@@ -13,10 +13,13 @@
   - [Which files are located in some directory](#which-files-are-located-in-some-directory)
   - [How to create a file](#how-create-a-file)
   - [How to remove a file](#how-to-remove-a-file)
+  - [How to change directory](#how-to-change-directory)
   - [How to read a file](#how-to-read-a-file)
   - [Determine file type](#determine-file-type)
   - [Copy file](#copy-file)
   - [How to rename file](#how-to-rename-a-file)
+  - [How to create a directory](#how-to-create-a-directory)
+  - [How to remove a directory](#how-to-remove-a-directory)
 
 ## Basic
 
@@ -252,6 +255,16 @@ $ rm file1.txt
 # file file1.txt has been removed
 ```
 
+### How to change directory
+
+The `cd` (change directory) command changes the current directory to the specified path:
+
+```bash
+$ cd /tmp
+/tmp $
+# change current directory to /tmp
+```
+
 ### How to read a file
 
 The `cat` command is used to concatenate files and print on the standard output:
@@ -291,3 +304,36 @@ $ ls
 file1.txt file3.txt
 # file2.txt moved (renamed) to file3.txt
 ```
+
+### How to create a directory
+
+The `mkdir` creates a new directory with a specified name:
+
+```bash
+$ mkdir testdir
+$ ls
+testdir
+```
+
+### How to remove a directory
+
+The `rmdir` removes an empty directory
+
+```bash
+$ rmdir testdir
+$ ls
+# there is no directory testdir here
+```
+
+best practice is use `rm` command with `-r` key:
+
+```bash
+$ rm -r testdir
+$ ls
+# there is no directory testdir here
+```
+
+> [!WARNING]
+> use next command wisely
+
+The `rm -rf` command is very destructive: remove the contents of directories recursively with ignore nonexistent files, never prompt.
