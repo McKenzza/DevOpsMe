@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Compile LaTeX document
         run: |
-          pandoc `ls -I "README.md" linux/` -o linux.pdf
+          pandoc `ls -d "$PWD"/linux/!(README.md)` -o linux.pdf
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
