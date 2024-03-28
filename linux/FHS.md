@@ -130,16 +130,16 @@ Example
 
 ```bash
 $ ls -l /dev | grep ^c
-crw-------   1 root    root     10,   122 мар 27 20:07 acpi_thermal_rel
-crw-r--r--   1 root    root     10,   235 мар 27 20:07 autofs
-crw-------   1 root    root     10,   234 мар 27 20:07 btrfs-control
-crw--w----   1 root    tty       5,     1 мар 27 20:07 console
-crw-------   1 root    root     10,   125 мар 27 20:07 cpu_dma_latency
-crw-------   1 root    root     10,   203 мар 27 20:07 cuse
-crw-------   1 root    root    241,     0 мар 27 20:07 drm_dp_aux0
-crw-------   1 root    root    241,     1 мар 27 20:07 drm_dp_aux1
-crw-------   1 root    root    241,     2 мар 27 20:07 drm_dp_aux2
-crw-------   1 root    root    241,     3 мар 27 20:07 drm_dp_aux3
+crw-------   1 root    root     10,   122 Mar 27 20:07 acpi_thermal_rel
+crw-r--r--   1 root    root     10,   235 Mar 27 20:07 autofs
+crw-------   1 root    root     10,   234 Mar 27 20:07 btrfs-control
+crw--w----   1 root    tty       5,     1 Mar 27 20:07 console
+crw-------   1 root    root     10,   125 Mar 27 20:07 cpu_dma_latency
+crw-------   1 root    root     10,   203 Mar 27 20:07 cuse
+crw-------   1 root    root    241,     0 Mar 27 20:07 drm_dp_aux0
+crw-------   1 root    root    241,     1 Mar 27 20:07 drm_dp_aux1
+crw-------   1 root    root    241,     2 Mar 27 20:07 drm_dp_aux2
+crw-------   1 root    root    241,     3 Mar 27 20:07 drm_dp_aux3
 ...
 # listing all the files in the dev directory using the `ls -l` command
 # filtering the result to display the character files by using the wildcard ^c
@@ -188,14 +188,14 @@ Example
 
 ```bash
 $ ls -l /dev | grep ^l
-lrwxrwxrwx   1 root    root            11 мар 27 20:07 core -> /proc/kcore
-lrwxrwxrwx   1 root    root            13 мар 27 20:07 fd -> /proc/self/fd
-lrwxrwxrwx   1 root    root            12 мар 27 20:07 initctl -> /run/initctl
-lrwxrwxrwx   1 root    root            28 мар 27 20:07 log -> /run/systemd/journal/dev-log
-lrwxrwxrwx   1 root    root             4 мар 27 20:07 rtc -> rtc0
-lrwxrwxrwx   1 root    root            15 мар 27 20:07 stderr -> /proc/self/fd/2
-lrwxrwxrwx   1 root    root            15 мар 27 20:07 stdin -> /proc/self/fd/0
-lrwxrwxrwx   1 root    root            15 мар 27 20:07 stdout -> /proc/self/fd/1
+lrwxrwxrwx   1 root    root            11 Mar 27 20:07 core -> /proc/kcore
+lrwxrwxrwx   1 root    root            13 Mar 27 20:07 fd -> /proc/self/fd
+lrwxrwxrwx   1 root    root            12 Mar 27 20:07 initctl -> /run/initctl
+lrwxrwxrwx   1 root    root            28 Mar 27 20:07 log -> /run/systemd/journal/dev-log
+lrwxrwxrwx   1 root    root             4 Mar 27 20:07 rtc -> rtc0
+lrwxrwxrwx   1 root    root            15 Mar 27 20:07 stderr -> /proc/self/fd/2
+lrwxrwxrwx   1 root    root            15 Mar 27 20:07 stdin -> /proc/self/fd/0
+lrwxrwxrwx   1 root    root            15 Mar 27 20:07 stdout -> /proc/self/fd/1
 #  listing all the files in the dev directory using the `ls -l` command
 # filtering the result to display the link files by using the wildcard ^l
 # This will display those lines that begin with the letter 'l'
@@ -213,8 +213,8 @@ Example
 
 ```bash
 $ ls -l /var/run | grep ^s
-srw-rw----  1 root              docker      0 мар 27 20:07 docker.sock
-srwxrwxrwx  1 root              root        0 мар 27 20:07 nvidia-xdriver-4c38c00c
+srw-rw----  1 root              docker      0 Mar 27 20:07 docker.sock
+srwxrwxrwx  1 root              root        0 Mar 27 20:07 nvidia-xdriver-4c38c00c
 # finding all the files in the /var/run directory using the `ls -l` command
 # filtering the result to display the socket files by using the wildcard ^s
 # This will display those lines that begin with the letter 's'
