@@ -49,13 +49,14 @@ Files on a Linux system can be divided into three main types:
 - **Directory Files** – these types of files are a warehouse for other file types. It may be a directory file within a directory (subdirectory).
 - **Special Files** – for devices, tunnels etc.
 
+
 ### Regular Files
 
 Regular files are nothing but the everyday files used to store information such as text, or images. These files can be found in directories, which are yet another type of files. In Linux, regular files can exist with or without an extension.
 
 Example
 
-```sh
+```bash
 $ ls -l /home/user | grep ^-
 ...
 -rw-r--r--   1 root root  1000 Jan 1 16:32 file1.txt
