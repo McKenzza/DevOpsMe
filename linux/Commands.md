@@ -20,6 +20,7 @@
   - [How to rename file](#how-to-rename-a-file)
   - [How to create a directory](#how-to-create-a-directory)
   - [How to remove a directory](#how-to-remove-a-directory)
+  - [File permissions](#file-permissions)
 
 ## Basic
 
@@ -357,3 +358,76 @@ $ ls
 > use next command wisely
 
 The `rm -rf` command is very destructive: remove the contents of directories recursively with ignore nonexistent files, never prompt.
+
+### File permissions
+
+The `chmod` command is used to change the access mode of a file.
+
+The name is an abbreviation of change mode. Which states that every file and directory has a set of permissions that control the permissions like who can read, write or execute the file. In this the permissions have three categories: read, write, and execute simultaneously represented by `r`, `w` and `x`. These letters combine together to form a specific permission for a group of users.
+
+#### Symbolic mode
+
+| Owner | Permission |
+|-------|-----------|
+| u | user (owner) |
+| g | group |
+| o | other |
+| a | all |
+
+The permissions can be add, remove and assign by using mathematical symbols like as below.
+
+`+` for add permission
+
+`-` for remove permission
+
+`=` for assign permission
+
+Examples
+
+```bash
+$ chmod u+x file
+# add eXecutable permission to user
+# from -rw------- to -rwx------
+```
+
+```bash
+$ chmod u-x file
+# remove eXecutable permission from user
+# from -rwx------ to -rw-------
+```
+
+```bash
+$ chmod o+rw file
+# add read and write permission to others
+# from -rw------- to -rw----rw-
+```
+
+#### Absolute mode
+
+In this mode file permission is represented by an octal value.
+
+`4` for read permission
+
+`2` for write permission
+
+`1` for execute permission
+
+Examples
+
+> [!INFO]
+> use next permissions if you know what you are doing
+
+```bash
+$ chmod 777 file
+# set full access for all users to file
+# 4 + 2 + 1 = 7 (rwx permissions)
+# from -rw------- to -rwxrwxrwx
+```
+
+```bash
+$ chmod 754 file
+# set rwx for owner
+# set r-x for group
+# set r-- for others
+# from -rw------- to -rwxr-xr--  
+```
