@@ -1,4 +1,4 @@
-name: Build LaTeX document
+name: Build PDF document
 on:
   push:
     branches: [ "main", "dev" ]
@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
-      - name: Compile LaTeX document
+      - name: Compile PDF document
         run: |
           list=`ls -d linux/*[!README].md`
           pandoc $list -o linux.pdf
