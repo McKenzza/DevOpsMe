@@ -271,8 +271,28 @@ The `cat` command is used to concatenate files and print on the standard output:
 
 ```bash
 $ cat file2.txt
-# some content
+# shows content of the "file2.txt"
 ```
+
+The `head` command displays the first few lines of a file
+
+```bash
+$ head file2.txt
+# shows first 10 lines of the "file2.txt" by default
+```
+
+Use `-n` key for specify the number of lines to display.
+
+The `tail` command displays the last few lines of a file.
+
+```bash
+$ tail file2.txt
+# shows the last 10 lines of the file “file2.txt”
+```
+
+`-n` key for specify the number of lines to display
+
+`-f` key used for output appended data as a file grows
 
 ### Determine file type
 
