@@ -361,11 +361,13 @@ The `rm -rf` command is very destructive: remove the contents of directories rec
 
 ### File permissions
 
+#### How to change file permissions
+
 The `chmod` command is used to change the access mode of a file.
 
 The name is an abbreviation of change mode. Which states that every file and directory has a set of permissions that control the permissions like who can read, write or execute the file. In this the permissions have three categories: read, write, and execute simultaneously represented by `r`, `w` and `x`. These letters combine together to form a specific permission for a group of users.
 
-#### Symbolic mode
+##### Symbolic mode
 
 | Owner | Permission |
 |-------|-----------|
@@ -402,7 +404,7 @@ $ chmod o+rw file
 # from -rw------- to -rw----rw-
 ```
 
-#### Absolute mode
+##### Absolute mode
 
 In this mode file permission is represented by an octal value.
 
@@ -411,6 +413,17 @@ In this mode file permission is represented by an octal value.
 `2` for write permission
 
 `1` for execute permission
+
+| Permissions | Octal Value | Binary Value | Description |
+|-------------|-------------|---------------|-------------|
+|--- | 0 | 000 | No permission |
+|--x | 1 | 001 | only permission to execute |
+| w- | 2 | 010 | only permission to write|
+|-wx | 3 | 011 | permission to write and execute|
+|r-- | 4 | 100 | only permission to read|
+|r-x | 5 | 101 | permission to read and execute|
+|rw- | 6 | 110 | permission to read and write|
+|rwx | 7 | 111 | permission to do all three, i.e. read, write and execute|
 
 Examples
 
@@ -430,4 +443,34 @@ $ chmod 754 file
 # set r-x for group
 # set r-- for others
 # from -rw------- to -rwxr-xr--  
+```
+
+```bash
+$ chmod 644 file
+# set -rw-r--r-- permissions
+```
+
+#### How to change file group ownership
+
+The `chgrp` command is used to change file group ownership.
+
+```bash
+$ chgrp docker file
+# change group ownership to docker
+```
+
+#### How to set default permissions
+
+The `umask` command is used to set default permissions for files or directories the user creates
+
+How does the umask command work?
+
+- The `umask` command specifies the permissions that the user does not want to be given out to the newly created file or directory.
+- umask works by doing a Bitwise AND with the bitwise complement(where the bits are inverted, i.e. 1 becomes 0 and 0 becomes 1) of the umask.
+- The bits which are set in the umask value, refer to the permissions, which are not assigned by default, as these values are subtracted from the maximum permission for files/directories.
+
+```bash
+$ umask 022
+# file permissions is 644
+# directory permissions is 755
 ```
