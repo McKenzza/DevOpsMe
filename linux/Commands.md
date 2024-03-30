@@ -427,7 +427,7 @@ In this mode file permission is represented by an octal value.
 
 Examples
 
-> [!INFO]
+> [!NOTE]
 > use next permissions if you know what you are doing
 
 ```bash

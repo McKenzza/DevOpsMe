@@ -20,6 +20,7 @@
   - [How to rename file](./Commands.md#how-to-rename-a-file)
   - [How to create a directory](./Commands.md#how-to-create-a-directory)
   - [How to remove a directory](./Commands.md#how-to-remove-a-directory)
+  - [File permissions](./Commands.md#file-permissions)
 
 ## File Hierarchy Structure
 
