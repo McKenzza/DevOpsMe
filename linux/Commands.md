@@ -295,6 +295,10 @@ $ tail file2.txt
 
 `-f` key used for output appended data as a file grows
 
+The `more` command is used to display the contents of a file in a terminal
+
+The `less` command is a program similar to _more_ (read how to use this with "man less")
+
 ### Determine file type
 
 The `file` command is used to know the file type.
