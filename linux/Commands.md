@@ -253,7 +253,7 @@ Just use `rm` (remove) command:
 
 ```bash
 $ rm file1.txt
-# file file1.txt has been removed
+# remove file file1.txt
 ```
 
 ### How to change directory
@@ -272,14 +272,14 @@ The `cat` command is used to concatenate files and print on the standard output:
 
 ```bash
 $ cat file2.txt
-# shows content of the "file2.txt"
+# show content of the "file2.txt"
 ```
 
 The `head` command displays the first few lines of a file
 
 ```bash
 $ head file2.txt
-# shows first 10 lines of the "file2.txt" by default
+# show first 10 lines of the "file2.txt" by default
 ```
 
 Use `-n` key for specify the number of lines to display.
@@ -288,7 +288,7 @@ The `tail` command displays the last few lines of a file.
 
 ```bash
 $ tail file2.txt
-# shows the last 10 lines of the file “file2.txt”
+# show the last 10 lines of the file “file2.txt”
 ```
 
 `-n` key for specify the number of lines to display
@@ -298,6 +298,39 @@ $ tail file2.txt
 The `more` command is used to display the contents of a file in a terminal
 
 The `less` command is a program similar to _more_ (read how to use this with "man less")
+
+The `cut` command is used to print selected parts of lines from files to standard output.
+
+```bash
+$ cut -c 3 file.txt
+# show third character from each line of file.txt 
+$ cut -c 1-5 file.txt
+# show character range 1-5 from each line of file.txt 
+$ cut -f 2 file.txt
+# show fields by Tab (default) delimiter
+```
+
+The `sort` command is used to sort the lines from a text file
+
+```bash
+$ sort file.txt
+# print sorted content
+```
+
+The `tr` command is used to translate a set of character to another one
+
+```bash
+$ tr 0 1
+0
+1
+00000
+11111
+$ tr a-z A-Z
+upper
+UPPER
+$ cat file.txt | tr -d '\n'
+# remove all 'new line' character
+```
 
 ### Determine file type
 
@@ -314,9 +347,9 @@ The `cp` (copy) command copy file from source to destiantion:
 
 ```bash
 $ cp file2.txt file1.txt
+# copy file2.txt to file1.txt
 $ ls
 file1.txt file2.txt
-# file2.txt copied to file1.txt
 ```
 
 ### How to rename a file
@@ -325,9 +358,9 @@ We can rename a file with `mv` (move) command:
 
 ```bash
 $ mv file2.txt file3.txt
+# move (rename) file2.txt to file3.txt
 $ ls
 file1.txt file3.txt
-# file2.txt moved (renamed) to file3.txt
 ```
 
 ### How to create a directory
