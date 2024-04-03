@@ -1,27 +1,5 @@
 # Linux Base Commands
 
-## Contents
-
-- [**Basic**](#basic)
-  - [Where am I](#where-am-i)
-  - [How long server is up](#how-long-server-is-up)
-  - [Manuals](#manuals)
-- [**User Info**](#user-info)
-  - [Who am I](#who-am-i)
-  - [Who is logged in](#who-is-logged-in)
-- [**File Management**](#file-management)
-  - [Which files are located in some directory](#which-files-are-located-in-some-directory)
-  - [How to create a file](#how-create-a-file)
-  - [How to remove a file](#how-to-remove-a-file)
-  - [How to change directory](#how-to-change-directory)
-  - [How to read a file](#how-to-read-a-file)
-  - [Determine file type](#determine-file-type)
-  - [Copy file](#copy-file)
-  - [How to rename file](#how-to-rename-a-file)
-  - [How to create a directory](#how-to-create-a-directory)
-  - [How to remove a directory](#how-to-remove-a-directory)
-  - [File permissions](#file-permissions)
-
 ## Basic
 
 ### Where am I
