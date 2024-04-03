@@ -13,7 +13,7 @@ jobs:
       - name: Compile PDF document
         run: |
           list=`ls -d linux/*[!README].md`
-          pandoc $list -o linux.pdf
+          pandoc linux/.content.md $list -o linux.pdf
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:

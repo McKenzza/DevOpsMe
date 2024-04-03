@@ -6,7 +6,10 @@ Basic knowledge of devops and system administration
 
 ## TODO
 
-- [ ] Linux base commands
+### Linux
+
+- [x] [Linux base commands](/linux/Commands.md)
+- [x] [File Hierarchy Structure](/linux/FHS.md)
 
 ### Container platforms
 
