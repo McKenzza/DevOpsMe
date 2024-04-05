@@ -1,6 +1,7 @@
-![example workflow](https://github.com/mckenzza/devops/actions/workflows/latex.yml/badge.svg)
-
 # DevOps
+
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/mckenzza/devops/latex.yml?label=Build%20PDF%20document&logo=github&style=flat-square)
+![last commit](https://img.shields.io/github/last-commit/mckenzza/devops.svg?style=flat-square)
 
 Basic knowledge of devops and system administration
 
