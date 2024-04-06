@@ -11,7 +11,7 @@ Basic knowledge of devops and system administration
 
 - [x] [Linux base commands](/linux/Commands.md)
 - [x] [File Hierarchy Structure](/linux/FHS.md)
-- [] [Network](/linux/Network.md)
+- [ ] [Network](/linux/Network.md)
 
 ### Container platforms
 
