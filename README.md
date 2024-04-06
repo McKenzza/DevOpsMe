@@ -1,7 +1,7 @@
+# DevOps
+
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/mckenzza/devops/latex.yml?label=Build%20PDF%20document&logo=github&style=flat-square)
 ![last commit](https://img.shields.io/github/last-commit/mckenzza/devops.svg?style=flat-square)
-
-# DevOps
 
 Basic knowledge of devops and system administration
 
@@ -11,6 +11,7 @@ Basic knowledge of devops and system administration
 
 - [x] [Linux base commands](/linux/Commands.md)
 - [x] [File Hierarchy Structure](/linux/FHS.md)
+- [ ] [Network](/linux/Network.md)
 
 ### Container platforms
 
