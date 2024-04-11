@@ -187,3 +187,68 @@ The `ss` command displays network connections and statistics.
 $ ss -tuln 
 # shows all listening TCP and UDP connections like netstat 
 ```
+
+## SSH
+
+The Secure Shell Protocol (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network. Its most notable applications are remote login and command-line execution. SSH was designed on Unix-like operating systems, as a replacement for Telnet and for unsecured remote Unix shell protocols, such as the Berkeley Remote Shell (rsh) and the related rlogin and rexec protocols, which all use insecure, plaintext methods of authentication, like passwords.
+
+### How SSH works?
+
+SSH runs on top of the TCP/IP protocol suite — which much of the Internet relies upon. TCP stands for Transmission Control Protocol and IP stands for Internet Protocol. TCP/IP pairs those two protocols in order to format, route, and deliver packets. IP indicates, among other information, which IP address a packet should go to (think of a mailing address), while TCP indicates which port a packet should go to at each IP address (think of the floor of a building or an apartment number).
+
+### What is SSH used for?
+
+Technically, SSH can transmit any arbitrary data over a network, and SSH tunneling can be set up for a myriad of purposes. However, the most common SSH use cases are:
+
+* Remotely managing servers, infrastructure, and employee computers
+* Securely transferring files (SSH is more secure than unencrypted protocols like FTP)
+* Accessing services in the cloud without exposing a local machine's ports to the Internet
+* Connecting remotely to services in a private network
+* Bypassing firewall restrictions
+
+### How to generate SSH-key?
+
+```bash
+$ ssh-keygen -t ed25519
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/user/.ssh/id_ed25519): # Enter or specify file
+Enter passphrase (empty for no passphrase): # some passphrase
+Enter same passphrase again: # passphrase again
+Your identification has been saved in /home/user/.ssh/id_ed25519
+Your public key has been saved in /home/user/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:3HX7VMK84T/DeEpHexoDfdoa4it0zJd8Air5c7Tnzo4 user@somehost
+The keys randomart image is:
++--[ED25519 256]--+
+|                 |
+|             o   |
+|            . * .|
+|       . . ..+ =.|
+|       .S .+.o=oo|
+|      . o o +.OBo|
+|     . . + ..+=X=|
+|      o ooo...+*+|
+|       oE==.ooo  |
++----[SHA256]-----+
+# we successfully generate SSH key
+```
+
+Insert public key to some host
+
+```bash
+$ ssh-copy-id somehost
+
+# or
+
+$ cat /home/user/.ssh/id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP4OAptqTdSNaamvzqZS96yu9/+7/0wHVYuFbbD3K7Pe user@somehost
+# copy this to .ssh/authorized_keys file on somehost
+```
+
+Now we can use our key to connect through SSH:
+
+```bash
+$ ssh somehost
+user@somehost:~$
+# we are on somehost
+```
