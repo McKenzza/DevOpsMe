@@ -8,6 +8,57 @@ The Linux system distinguishes two types of network interfaces – the physical 
 
 Simply, a network interface is the point of connection between a computer and a network. In other words, how the Linux system links up the software side of networking to the hardware side.
 
+## Network Achitecture
+
+Linux network architecture is made up of layers that work together to allow communication between devices.
+
+What we know is that the `OSI (Open Systems Interconnection)` model has been based on [OSI Basic Reference Model (1984)](https://www.iso.org/standard/14252.html). Created by ISO (International Organisation for Standarisation), it consists on seven layers:
+
+### Layer 1: Physical layer
+
+The physical layer is the lowest layer in the Linux network architecture. It is responsible for the physical transmission of data over the network. This layer deals with the physical components of the network such as cables, connectors, and network interface cards (NICs).
+
+Usage:
+
+Real infrastructure: LAN (Local Area Network), WAN (Wide Area Network), BAN (Building Area Network) etc.
+
+Converts binary data into physical signal
+
+> [!NOTE]
+> Information or bits are transmitted either by wires, cables, or without them, for example via Bluetooth, Wi-Fi.
+>
+> When a network problem occurs, specialists immediately turn to the physical layer to check, for example, whether the network cable is disconnected from the device.
+
+### Layer 2: Data Link Layer
+
+The data link layer is responsible for providing reliable communication between two devices on the same network segment. It deals with protocols such as Ethernet and Wi-Fi and is responsible for ensuring that data is transmitted without errors.
+
+In other words, data link layer provides encapsulation of network layer data packets into frames and its synchronization.
+
+Usage:
+
+Switches operate at the data link layer and use MAC (Media Access Control) addresses to identify devices on the network. When a device sends data to another device on the network, the switch reads the MAC address of the data packet and determines the best route for the packet to take to reach its destination. This process is called packet switching, and it allows multiple devices on a network to communicate simultaneously without interfering with each other.
+
+### Layer 3: Network Layer
+
+The network layer is responsible for providing logical addressing and routing of data between different networks. This layer is where the IP protocol resides, and it is responsible for determining the best path for data to travel across the network.
+
+### Layer 4: Transport Layer
+
+The transport layer is responsible for providing reliable data transfer between applications running on different devices. This layer deals with protocols such as TCP and UDP, and it is responsible for ensuring that data is transmitted without errors and in the correct order.
+
+### Layer 5: Session Layer
+
+The session layer is responsible for establishing, maintaining, and terminating sessions between applications on different devices. This layer deals with protocols such as SSH and Telnet, and it is responsible for managing communication between applications.
+
+### Layer 6: Presentation Layer
+
+The presentation layer is responsible for the formatting and representation of data. It deals with protocols such as ASCII and JPEG, and it is responsible for ensuring that data is presented in a format that can be understood by the receiving device.
+
+### Layer 7: Application Layer
+
+The application layer is the highest layer in the Linux network architecture. It deals with protocols such as HTTP, FTP, and SMTP, and it is responsible for providing services to applications running on different devices.
+
 ## Network Interface Names
 
 List the available network interfaces with sys FS:
@@ -60,6 +111,21 @@ $ ip addr
 ...
 ```
 
+### How to check host availability?
+
+The `ping` command sends ICMP (Internet Control Message Protocol) echo request to a specified host.
+
+```bash
+$ ping google.com
+PING google.com (2a00:1450:4010:c0e::65) 56 data bytes
+64 bytes from lu-in-f101.1e100.net (2a00:1450:4010:c0e::65): icmp_seq=1 ttl=106 time=47.7 ms
+64 bytes from lu-in-f101.1e100.net (2a00:1450:4010:c0e::65): icmp_seq=2 ttl=106 time=56.3 ms
+64 bytes from lu-in-f101.1e100.net (2a00:1450:4010:c0e::65): icmp_seq=3 ttl=106 time=55.7 ms
+
+$ ping 8.8.8.8
+# sends ICMP packets to 8.8.8.8
+```
+
 ## What is Subnet (Network Mask)?
 
 A network mask is a dotted-decimal number that identifies a node or network. It is used in networks to separate a single network into multiple logical networks. It is necessary for communication between computers in a network to be secure. If you have a network that has multiple subnets, you need to define the subnet’s netmask.
@@ -104,36 +170,91 @@ Classless Inter-Domain Routing (CIDR) is a method for allocating IP addresses an
 
 \* To make it possible to place hosts in networks with this mask dimension, we deviate from the rules adopted for working in other networks.
 
-## Network Achitecture
+## How to display network connections and statistics?
 
-Linux network architecture is made up of layers that work together to allow communication between devices.
+The `netstat` command prints network connections, routing tables, interface statistics, masquerade connections, and multicast memberships.
 
-What we know is that the `OSI (Open Systems Interconnection)` model has been based on [OSI Basic Reference Model (1984)](https://www.iso.org/standard/14252.html). Created by ISO (International Organisation for Standarisation), it consists on seven layers:
+```bash
+$ netstat -tuln 
+# shows all listening TCP and UDP connections
+```
 
-### Layer 1: Physical layer
+## Hot to show network socket information?
 
-The physical layer is the lowest layer in the Linux network architecture. It is responsible for the physical transmission of data over the network. This layer deals with the physical components of the network such as cables, connectors, and network interface cards (NICs).
+The `ss` command displays network connections and statistics.
 
-### Layer 2: Data Link Layer
+```bash
+$ ss -tuln 
+# shows all listening TCP and UDP connections like netstat 
+```
 
-The data link layer is responsible for providing reliable communication between two devices on the same network segment. It deals with protocols such as Ethernet and Wi-Fi and is responsible for ensuring that data is transmitted without errors.
+## SSH
 
-### Layer 3: Network Layer
+The Secure Shell Protocol (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network. Its most notable applications are remote login and command-line execution. SSH was designed on Unix-like operating systems, as a replacement for Telnet and for unsecured remote Unix shell protocols, such as the Berkeley Remote Shell (rsh) and the related rlogin and rexec protocols, which all use insecure, plaintext methods of authentication, like passwords.
 
-The network layer is responsible for providing logical addressing and routing of data between different networks. This layer is where the IP protocol resides, and it is responsible for determining the best path for data to travel across the network.
+### How SSH works?
 
-### Layer 4: Transport Layer
+SSH runs on top of the TCP/IP protocol suite — which much of the Internet relies upon. TCP stands for Transmission Control Protocol and IP stands for Internet Protocol. TCP/IP pairs those two protocols in order to format, route, and deliver packets. IP indicates, among other information, which IP address a packet should go to (think of a mailing address), while TCP indicates which port a packet should go to at each IP address (think of the floor of a building or an apartment number).
 
-The transport layer is responsible for providing reliable data transfer between applications running on different devices. This layer deals with protocols such as TCP and UDP, and it is responsible for ensuring that data is transmitted without errors and in the correct order.
+### What is SSH used for?
 
-### Layer 5: Session Layer
+Technically, SSH can transmit any arbitrary data over a network, and SSH tunneling can be set up for a myriad of purposes. However, the most common SSH use cases are:
 
-The session layer is responsible for establishing, maintaining, and terminating sessions between applications on different devices. This layer deals with protocols such as SSH and Telnet, and it is responsible for managing communication between applications.
+* Remotely managing servers, infrastructure, and employee computers
+* Securely transferring files (SSH is more secure than unencrypted protocols like FTP)
+* Accessing services in the cloud without exposing a local machine's ports to the Internet
+* Connecting remotely to services in a private network
+* Bypassing firewall restrictions
 
-### Layer 6: Presentation Layer
+### How to generate SSH-key?
 
-The presentation layer is responsible for the formatting and representation of data. It deals with protocols such as ASCII and JPEG, and it is responsible for ensuring that data is presented in a format that can be understood by the receiving device.
+```bash
+$ ssh-keygen -t ed25519
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/user/.ssh/id_ed25519): # Enter or specify file
+Enter passphrase (empty for no passphrase): # some passphrase
+Enter same passphrase again: # passphrase again
+Your identification has been saved in /home/user/.ssh/id_ed25519
+Your public key has been saved in /home/user/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:3HX7VMK84T/DeEpHexoDfdoa4it0zJd8Air5c7Tnzo4 user@somehost
+The keys randomart image is:
++--[ED25519 256]--+
+|                 |
+|             o   |
+|            . * .|
+|       . . ..+ =.|
+|       .S .+.o=oo|
+|      . o o +.OBo|
+|     . . + ..+=X=|
+|      o ooo...+*+|
+|       oE==.ooo  |
++----[SHA256]-----+
+# we successfully generate SSH key
+```
 
-### Layer 7: Application Layer
+Insert public key to some host
 
-The application layer is the highest layer in the Linux network architecture. It deals with protocols such as HTTP, FTP, and SMTP, and it is responsible for providing services to applications running on different devices.
+```bash
+$ ssh-copy-id user@somehost
+
+# or
+
+$ cat /home/user/.ssh/id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP4OAptqTdSNaamvzqZS96yu9/+7/0wHVYuFbbD3K7Pe user@somehost
+# copy this to .ssh/authorized_keys file on somehost
+```
+
+The basic syntax for using the SSH command is as follows:
+
+```bash
+ssh [username]@[hostname or IP address]
+```
+
+Now we can use our key to connect with SSH:
+
+```bash
+$ ssh user@somehost
+user@somehost:~$
+# we are on somehost
+```
