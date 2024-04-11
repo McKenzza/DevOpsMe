@@ -236,7 +236,7 @@ The keys randomart image is:
 Insert public key to some host
 
 ```bash
-$ ssh-copy-id somehost
+$ ssh-copy-id user@somehost
 
 # or
 
@@ -245,10 +245,16 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP4OAptqTdSNaamvzqZS96yu9/+7/0wHVYuFbbD3K7Pe
 # copy this to .ssh/authorized_keys file on somehost
 ```
 
-Now we can use our key to connect through SSH:
+The basic syntax for using the SSH command is as follows:
 
 ```bash
-$ ssh somehost
+ssh [username]@[hostname or IP address]
+```
+
+Now we can use our key to connect with SSH:
+
+```bash
+$ ssh user@somehost
 user@somehost:~$
 # we are on somehost
 ```
